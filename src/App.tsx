@@ -71,7 +71,7 @@ function App() {
   // scroll listener for loading more songs
   useEffect(() => {
     function handleScroll() {
-      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight) {
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
         addPageSongs()
       }
     }

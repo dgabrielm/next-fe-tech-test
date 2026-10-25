@@ -1,13 +1,4 @@
-function createParamsString(urlParams: Record<string, string | number>): string {
-    let urlString = ''
-    const entries = Object.entries(urlParams)
-
-    entries.forEach(([k, v], i) => {
-        urlString += `${k}=${v}${(i + 1) === entries.length ? '' : '&'}`
-    })
-
-    return urlString
-}
+import { createParamsString } from './helpers'
 
 // restricted to song search by artist, album or song name
 type ItunesEndpoints = 'search'
