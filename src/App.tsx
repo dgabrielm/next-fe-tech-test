@@ -44,7 +44,7 @@ function App() {
   function addPageSongs() {
     const results = data?.results ?? []
 
-    if (songs.length >= results.length) {
+    if (songs.length >= results.length && songs.length > 0) {
       setEndOfResultsToastIsOpen(true)
       return
     }

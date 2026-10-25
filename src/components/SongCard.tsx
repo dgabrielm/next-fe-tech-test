@@ -46,6 +46,7 @@ function SongCard({ songTitle, albumName, artistName, albumCoverURL, audioSample
                         controls
                         controlsList="nodownload noremoteplayback"
                         src={audioSample}
+                        aria-label={`Preview of ${songTitle}`}
                     />
                 </Box>
             </Box>
