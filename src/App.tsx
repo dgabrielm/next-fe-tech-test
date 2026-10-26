@@ -77,6 +77,8 @@ function App() {
       <Box component="header" sx={{ width: '100%', mx: 'auto' }}>
         <Box
           component="img"
+          fetchPriority="high"
+          loading="eager"
           src={heroImg}
           alt="dark hero image with music theme"
           sx={{ display: 'block', width: '100%', height: 'auto' }}
