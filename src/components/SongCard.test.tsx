@@ -8,7 +8,7 @@ const song = {
   albumName: 'Album name',
   artistName: 'Artist name',
   albumCoverURL: 'https://example.com/cover.jpg',
-  audioSample: 'https://example.com/sample.mp3',
+  audioSample: 'https://example.com/sample.mp3'
 }
 
 describe('SongCard', () => {
@@ -35,14 +35,14 @@ describe('SongCard', () => {
     expect(audio).toHaveAttribute('controls')
     expect(audio).toHaveAttribute(
       'controlslist',
-      'nodownload noremoteplayback',
+      'nodownload noremoteplayback'
     )
   })
 
   it('uses the placeholder if the album cover fails to load', () => {
     render(<SongCard {...song} />)
     const cover = screen.getByRole('img', {
-      name: `${song.albumName} album cover`,
+      name: `${song.albumName} album cover`
     })
 
     fireEvent.error(cover)

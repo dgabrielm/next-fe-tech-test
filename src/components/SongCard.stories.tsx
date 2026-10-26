@@ -10,8 +10,8 @@ const meta = {
     albumName: "Hurry Up, We're Dreaming",
     artistName: 'M83',
     albumCoverURL: albumPlaceholder,
-    audioSample: '',
-  },
+    audioSample: ''
+  }
 } satisfies Meta<typeof SongCard>
 
 export default meta
@@ -23,12 +23,12 @@ export const LongTitles: Story = {
   args: {
     songTitle: 'A Much Longer Example Song Title to Show Its Wrapping',
     albumName: 'An Example Album Name That Is Also Quite Long',
-    artistName: 'An Artist with a Longer Name',
-  },
+    artistName: 'An Artist with a Longer Name'
+  }
 }
 
 export const BrokenCover: Story = {
   args: {
-    albumCoverURL: '/missing-album-cover.jpg',
-  },
+    albumCoverURL: '/missing-album-cover.jpg'
+  }
 }

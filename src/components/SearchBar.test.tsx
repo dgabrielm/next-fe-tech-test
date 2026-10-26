@@ -9,7 +9,7 @@ describe('SearchBar', () => {
     const onChange = vi.fn(
       (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         changedValue = event.target.value
-      },
+      }
     )
 
     render(<SearchBar value="Shoegaze" onChange={onChange} search={vi.fn()} />)

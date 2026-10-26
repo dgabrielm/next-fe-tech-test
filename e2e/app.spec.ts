@@ -17,12 +17,12 @@ async function stubItunes(page: Page) {
       const results =
         term === 'matching'
           ? Array.from({ length: 20 }, (_, index) => ({
-              trackName: `Matching Song ${index + 1}`,
-              collectionName: `Matching Album ${index + 1}`,
-              artistName: 'Matching Artist',
-              artworkUrl100: coverImage,
-              previewUrl: '',
-            }))
+            trackName: `Matching Song ${index + 1}`,
+            collectionName: `Matching Album ${index + 1}`,
+            artistName: 'Matching Artist',
+            artworkUrl100: coverImage,
+            previewUrl: '',
+          }))
           : []
 
       await route.fulfill({

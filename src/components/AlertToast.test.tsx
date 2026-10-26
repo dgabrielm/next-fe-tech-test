@@ -7,7 +7,7 @@ describe('AlertToast', () => {
     render(
       <AlertToast useIsOpen={[true, vi.fn()]}>
         Saved successfully
-      </AlertToast>,
+      </AlertToast>
     )
 
     expect(screen.getByRole('alert')).toHaveTextContent('Saved successfully')
@@ -17,7 +17,7 @@ describe('AlertToast', () => {
     render(
       <AlertToast useIsOpen={[false, vi.fn()]}>
         Saved successfully
-      </AlertToast>,
+      </AlertToast>
     )
 
     expect(screen.queryByRole('alert')).not.toBeInTheDocument()
@@ -29,7 +29,7 @@ describe('AlertToast', () => {
     render(
       <AlertToast useIsOpen={[true, setIsOpen]}>
         Saved successfully
-      </AlertToast>,
+      </AlertToast>
     )
 
     fireEvent.click(screen.getByRole('button', { name: /close/i }))

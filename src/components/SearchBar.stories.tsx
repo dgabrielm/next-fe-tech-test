@@ -9,7 +9,7 @@ const meta = {
   args: {
     value: '',
     onChange: fn(),
-    search: fn(),
+    search: fn()
   },
 } satisfies Meta<typeof SearchBar>
 
