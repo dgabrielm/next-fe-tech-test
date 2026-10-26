@@ -23,6 +23,7 @@ function App() {
   // initial search function
   // enabled: false active on useQuery,
   // user feedback should happen where the user action occurs, not in response to data changing
+  // not trimming or lowercasing the search because the API handles it
   const search = async (): Promise<void> => {
     setSongs([])
     setNoResultsToastIsOpen(false)

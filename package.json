@@ -11,8 +11,10 @@
     "test": "vitest",
     "typecheck": "tsc -b",
     "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test --headed",
     "test:e2e-headless": "playwright test",
+    "test:e2e-core": "playwright test --project=chromium --project=firefox --project=webkit",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "prepare": "husky"
