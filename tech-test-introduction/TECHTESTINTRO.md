@@ -9,7 +9,7 @@ The app meets the acceptance criteria but deviates from the specification slight
 
 - An application like this (no complex state like session or user info) does not need advanced state management. I am also of the opinion that state management libraries should be used sparingly because they have a performance cost associated with them, and often a well structured application can avoid the need state management tools or heavy prop drilling. See https://kentcdodds.com/blog/application-state-management-with-react for one example. 
 - TanstackQuery is also an excellent tool for managing state data called from an external API and includes response caching out of the box, so I've used that as my preferred library.
-- I am of the opinion that in most cases you would not deploy a web application behind an express server simply to serve the static web files because there are cloud tools that scale automatically without the complexity of managing scaling resources for self-managed server. On AWS this could be S3, Route53 and CloudFront or the newer LightSail tool which uses those under the hood. The Azure equivalent might be: Azure Blob storage, Azure DNS and Azure Front Door.
+- I am of the opinion that in most cases you would not deploy a web application behind an express server simply to serve the static web files because there are cloud tools that scale automatically without the complexity of managing scaling resources for self-managed server. On AWS this could be S3, Route53 and CloudFront or the newer Amplify tool which uses those under the hood. The Azure equivalent might be: Azure Blob storage, Azure DNS and Azure Front Door.
 
 However, please consider this to be a first draft, and if you would like to do a code review, I would be happy to make any changes and/or include these technologies.
 
@@ -20,7 +20,7 @@ The itunes API does not have a parameter for pagination, so I was unfortunately 
 I've not used MaterialUI before, but I have tried to do things in the "MUI way" as part of this application. There might be places where someone more experienced with the application would do things differently, and I am happy to get feedback on that too.
 
 ### Where can you use the app?
-The app is deployed using AWS Lightsail, and I will provide the url to the site via email when I submit this application. You can also run it locally, including the built version of the app by following the `README.md`
+The app is deployed using AWS Amplify, and I will provide the url to the site via email when I submit this application. You can also run it locally, including the built version of the app by following the `README.md`
 
 ## Features highlight
 
@@ -72,7 +72,7 @@ I wrote this application to be as maintainable, flexible and performant as I wou
 - CI/CD:
     - automated changelog generation based on the commit convention enforced using https://github.com/TriPSs/conventional-changelog-action or similar.
     - automated version bumping.
-    - automated deployment to server (if using service other than AWS Lightsail or Vercel etc which watches your repository and does this automatically).
+    - automated deployment to server (if using service other than AWS Amplify or Vercel etc which watches your repository and does this automatically).
     - Add branch protection rules, enforcing PRs from another branch into main, and certain other standards like minimum 2 approvals etc (depends on what works for the team).
     - run full test suite before allowing merging of PRs into live branches.
     - Add dependabot to github repo to automatically check which libraries need to be updated for security purposed.
