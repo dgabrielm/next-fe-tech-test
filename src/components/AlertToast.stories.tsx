@@ -32,7 +32,7 @@ const meta = {
   component: ToastPreview,
   args: {
     message: 'Saved successfully',
-    alertType: 'info',
+    alertType: 'info'
   },
 } satisfies Meta<typeof ToastPreview>
 
@@ -44,6 +44,6 @@ export const Info: Story = {}
 export const Warning: Story = {
   args: {
     message: 'Something needs your attention',
-    alertType: 'warning',
+    alertType: 'warning'
   },
 }

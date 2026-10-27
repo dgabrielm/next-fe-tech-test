@@ -13,6 +13,9 @@ The app meets the acceptance criteria but deviates from the specification slight
 
 However, please consider this to be a first draft, and if you would like to do a code review, I would be happy to make any changes and/or include these technologies.
 
+### iTunes API limitations
+The itunes API does not have a parameter for pagination, so I was unfortunately not able to implement real load-on-scroll - instead the load-on-scroll happens between the application and the DOM: 10 get added to the DOM at a time on scroll. In there way there is still a performance saving on the frontend, just not on the network payload.
+
 ### A quick note on MUI
 I've not used MaterialUI before, but I have tried to do things in the "MUI way" as part of this application. There might be places where someone more experienced with the application would do things differently, and I am happy to get feedback on that too.
 
@@ -64,26 +67,26 @@ Mobile:
 
 
 ## What I would add or change given more time
-I wrote this application to be as maintainable, flexible and performant as I would write any professional. However, as this is a technical test, I have not added every little thing I would like to add, fix or refactor that I would for an application built to actually be used - so I'll list them here:
+I wrote this application to be as maintainable, flexible and performant as I would write any professional web application. However, as this is a technical test, I have not added every little thing I would like to add, fix or refactor that I would for an application built to actually be used in production - so I'll list them here:
 
 - CI/CD:
     - automated changelog generation based on the commit convention enforced using https://github.com/TriPSs/conventional-changelog-action or similar.
     - automated version bumping.
     - automated deployment to server (if using service other than AWS Lightsail or Vercel etc which watches your repository and does this automatically).
-    - Add branch protection rules, enforcing PRs from another branch into main, and certain other standards like minimum 2 approvals etc (depends on).
+    - Add branch protection rules, enforcing PRs from another branch into main, and certain other standards like minimum 2 approvals etc (depends on what works for the team).
     - run full test suite before allowing merging of PRs into live branches.
     - Add dependabot to github repo to automatically check which libraries need to be updated for security purposed.
     - Add protected branches representing enviornments for dev, staging, prod (and have these deploy to their own environments for a more complete SDLC).
 - Application:
     - add a more nicely designed loading state.
-    - comprehensive check on copy (possibly with LLM assistance).
-    - comprehensive error handling built into the api client and more clearly defined behaviour for alerting the user when different types of errors are send from the API (and more complete testing of this).
-    - routing useing react-router (or conversion to a NextJS application if SSR/SSG was required). I did not feel like it was necessary to build in routing for an application that has one user journey, but would of course for any application I know is going to grow.
+    - comprehensive check on copy.
+    - comprehensive error handling built into the api client and more clearly defined behaviour for alerting the user when different types of errors are sent from the API (and more complete testing of this).
+    - routing useing react-router (or conversion to a NextJS application if SSR/SSG is required). I did not feel like it was necessary to build in routing for an application that has one user journey, but would of course for any application I know is going to grow.
     - get to 100% unit test coverage (currently the whole application IS covered by unit test and e2e tests but there is technically less than 100% unit test coverage).
     - get Lighthouse performance score to 100 - it's currently on 99 and there are some interesting recommendations on the report which I would like to research and understand so I can address or make a conscious decision to disregard.
 - Developer Experience
-    - restructure application to have a models folder which holds TS definitions for requests and expected responses (assuming the application has more than one API endpoint to call).
-    - create easy-to-use mocking setup for local testing. (I've made one of these by intercepting client calls and matching endpoints to mock data which works really nicely when you need to develop a frontend before an API has been built).
+    - restructure application to have a 'models' folder which holds TS definitions for requests and expected responses (assuming the application has more than one API endpoint to call).
+    - create easy-to-use mocking setup for local testing. (I've made one of these in the past by intercepting client calls and matching endpoints to mock data which works really nicely when you need to develop a frontend before an API has been built).
     - would possibly add snapshot testing to everything as cheap way of determining when changing one thing in the application might inadvertantly affect another, and highlight this to the developer.
     - slight structure changes to components folder structure. One folder per component for better readability and possibly a lib folder if creating small single-responsibility UI components from scratch (i.e. if not using MUI).
 
@@ -93,10 +96,10 @@ I have designed and built this application using my learnings and understanding 
 
 I have used LLMs to:
 
-- assist in searching the internet and tools' documentations to find out how various tools and concepts work
-- generate images to use in the design of the application (header, favicon and album cover fallback image are all generated)
-- help to debug a small number of issues I found in order to speed up development
-- generate first draft of certain test cases for my review to assist in speed of development
-- to assist in the writing of the README.md (but not this document)
+- assist in searching the internet and tools' documentations to find out how various tools and concepts work.
+- generate images to use in the design of the application (header, favicon and album cover fallback image are all generated).
+- help to debug a small number of issues I found in order to speed up development.
+- generate first draft of certain test cases for my review to assist in speed of development.
+- to assist in the writing of the README.md (but not this document).
 
 I consider this code to be wholly my own work and my LLM usage to be limited to boiler plate or non-coding tasks and has not been used in any technical design decisions.
